@@ -10,7 +10,18 @@
 - 两个机器人各一个 `LarkChannel`，按 `chat_id`（群会话 ID）作为 conversationId，
   所以每个群的对话记忆是独立的。
 
-## 运行前准备（环境变量，不要写进代码/Git）
+## 运行前准备（凭证配置）
+
+方式一（推荐）：复制示例配置并填入凭证：
+
+```powershell
+Copy-Item config\application.example.yml config\application.yml
+```
+
+然后用编辑器打开 `config\application.yml`，把两个机器人的 App ID / App Secret 填进去
+（该文件已被 gitignore，不会提交）。后端地址默认即可。
+
+方式二（环境变量，不要写进代码/Git）：
 
 ```powershell
 $env:FEISHU_SPRINGAI_APP_ID = "cli_xxx"

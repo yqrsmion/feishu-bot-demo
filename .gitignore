@@ -2,4 +2,5 @@ target/
 .idea/
 *.iml
 .env
-config/
+config/*
+!config/application.example.yml

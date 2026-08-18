@@ -1,0 +1,11 @@
+# 复制本文件为 config/application.yml 并填入你的飞书机器人凭证
+# （config/application.yml 已被 gitignore，不会提交到 Git）
+bot:
+  springai:
+    app-id: 请填入 SpringAI_Bot 的 App ID（形如 cli_xxxxxxxx）
+    app-secret: 请填入 SpringAI_Bot 的 App Secret
+    backend-url: http://localhost:8080
+  agentscope:
+    app-id: 请填入 AgentScope_Bot 的 App ID（形如 cli_xxxxxxxx）
+    app-secret: 请填入 AgentScope_Bot 的 App Secret
+    backend-url: http://localhost:8081
