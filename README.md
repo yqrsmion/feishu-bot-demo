@@ -3,6 +3,21 @@
 把两个演示服务接入飞书群机器人：群内 @机器人 提问，机器人把消息转发给本地后端
 （spring-ai 8080 / agentscope 8081），再把回答回复到群里。
 
+## 效果预览
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/images/SpringAI_Bot.png" alt="SpringAI_Bot" width="280"></td>
+    <td align="center"><img src="docs/images/AgentScope_Bot.png" alt="AgentScope_Bot" width="280"></td>
+    <td align="center"><img src="docs/images/Hermes_Bot.png" alt="Hermes_Bot" width="280"></td>
+  </tr>
+  <tr>
+    <td align="center">SpringAI_Bot</td>
+    <td align="center">AgentScope_Bot</td>
+    <td align="center">Hermes_Bot</td>
+  </tr>
+</table>
+
 ## 原理
 
 - 飞书开放平台"事件订阅"选 **长连接（WebSocket）**：本服务主动连出到飞书，不需要公网地址；
