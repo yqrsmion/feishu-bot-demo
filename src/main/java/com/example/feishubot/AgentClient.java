@@ -1,10 +1,12 @@
 package com.example.feishubot;
 
+import java.net.URI;
 import java.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.util.UriComponentsBuilder;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 
@@ -20,12 +22,15 @@ public class AgentClient {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     public String chat(String baseUrl, String chatId, String message) throws Exception {
+        URI uri = UriComponentsBuilder.fromUriString(baseUrl)
+                .path("/api/chat")
+                .queryParam("conversationId", chatId)
+                .queryParam("message", message)
+                .build()
+                .encode()
+                .toUri();
         String response = webClient.get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("/api/chat")
-                        .queryParam("conversationId", chatId)
-                        .queryParam("message", message)
-                        .build())
+                .uri(uri)
                 .retrieve()
                 .bodyToMono(String.class)
                 .timeout(Duration.ofSeconds(120))
