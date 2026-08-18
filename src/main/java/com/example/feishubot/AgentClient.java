@@ -33,7 +33,7 @@ public class AgentClient {
                 .uri(uri)
                 .retrieve()
                 .bodyToMono(String.class)
-                .timeout(Duration.ofSeconds(120))
+                .timeout(Duration.ofSeconds(60))
                 .block();
         JsonNode node = objectMapper.readTree(response);
         String reply = node.path("reply").asText(null);
