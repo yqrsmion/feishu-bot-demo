@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: feishu-bot-demo
+
+server:
+  port: 8090
+
+bot:
+  springai:
+    app-id: ${FEISHU_SPRINGAI_APP_ID:}
+    app-secret: ${FEISHU_SPRINGAI_APP_SECRET:}
+    backend-url: ${SPRINGAI_BACKEND_URL:http://localhost:8080}
+  agentscope:
+    app-id: ${FEISHU_AGENTSCOPE_APP_ID:}
+    app-secret: ${FEISHU_AGENTSCOPE_APP_SECRET:}
+    backend-url: ${AGENTSCOPE_BACKEND_URL:http://localhost:8081}
